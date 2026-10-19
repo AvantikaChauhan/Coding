@@ -1,0 +1,36 @@
+class Solution {
+public:
+    vector<int> targetIndices(vector<int>& nums, int target) {
+        int count=0,small=0;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(nums[i]<target)small++;
+            else if(nums[i]==target)count++;
+        }
+        vector<int>result;
+        while(count!=0){
+            result.push_back(small++);
+            count--;
+        }
+        return result;
+    }
+};
+
+//2nd
+class Solution {
+    public List<Integer> targetIndices(int[] nums, int target) {
+      Arrays.sort(nums);
+      List<Integer> arr=new ArrayList<>();
+      int j=0;
+      for(int i=0;i<nums.length;i++)
+      {
+        if(nums[i]==target)
+        {
+            arr.add(i);
+            j++;
+        }
+      }
+      
+        return arr;
+    }
+}
